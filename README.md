@@ -11,9 +11,14 @@
 2. Run the application
 3. Runs on: http://localhost:8080
 
-## 🌐 API Example
+## 🌐 API 
 
-GET /api/hello
+GET /api/tasks
+GET /api/tasks/1
+POST /api/tasks
+PUT /api/tasks/1
+DELETE /api/tasks/1
+PATCH /api/tasks/2/status?status=COMPLETED
 
 ## 👨‍💻 Frontend (For React Developers)
 
