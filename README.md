@@ -13,7 +13,13 @@
 
 ## 🌐 API Example
 
-GET /api/hello
+GET /api/tasks 
+GET /api/tasks/1 
+POST /api/tasks 
+PUT /api/tasks/1 
+DELETE /api/tasks/1 
+PATCH /api/tasks/2/status?status=COMPLETED
+
 
 ## 👨‍💻 Frontend (For React Developers)
 

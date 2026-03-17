@@ -3,3 +3,4 @@ backend/target/
 *.log
 task-management-api/
 .vscode/
+*.db
