@@ -13,12 +13,12 @@
 
 ## 🌐 API 
 
-GET /api/tasks
-GET /api/tasks/1
-POST /api/tasks
-PUT /api/tasks/id
-DELETE /api/tasks/id
-PATCH /api/tasks/id/status?status=COMPLETED
+GET /api/tasks  
+GET /api/tasks/1  
+POST /api/tasks  
+PUT /api/tasks/id  
+DELETE /api/tasks/id  
+PATCH /api/tasks/id/status?status=COMPLETED  
 
 ## 👨‍💻 Frontend (For React Developers)
 
