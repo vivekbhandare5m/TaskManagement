@@ -6,6 +6,8 @@ import com.example.taskmanager.service.TaskService;
 
 import jakarta.validation.Valid;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +26,8 @@ public class TaskController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TaskResponseDTO>> getAllTasks() {
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.getAllTasks());
+    public ResponseEntity<Page<TaskResponseDTO>> getAllTasks(Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.getAllTasks(pageable));
     }
 
     @GetMapping("/{id}")

@@ -7,12 +7,16 @@ import com.example.taskmanager.exception.ResourceNotFoundException;
 import com.example.taskmanager.repository.TaskRepository;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@Transactional
 public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository taskRepository;
@@ -24,9 +28,9 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<TaskResponseDTO> getAllTasks() {
-
-        return taskRepository.findAll().stream().map(task->modelMapper.map(task,TaskResponseDTO.class)).toList();
+    public Page<TaskResponseDTO> getAllTasks(Pageable pageable) {
+    	Page<Task> taskPage=taskRepository.findAll(pageable);
+        return taskPage.map(task->modelMapper.map(task,TaskResponseDTO.class));
     }
 
     @Override
@@ -87,4 +91,6 @@ public class TaskServiceImpl implements TaskService {
 
         return modelMapper.map(updatedTask, TaskResponseDTO.class);
     }
+
+	
 }
